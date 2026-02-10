@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "projName",
+            "type": "promptString",
+            "description": "Project name"
+        },
+        {
+            "id": "modName",
+            "type": "promptString",
+            "description": "Module/Testbench name"
+        }
+    ],
+    "tasks": [
+        {
+            "label": "New Project",
+            "type": "shell",
+            "command": "make new-proj NAME=${input:projName}",
+            "problemMatcher": []
+        },
+        {
+            "label": "New Module",
+            "type": "shell",
+            "command": "./scripts/new_module.sh module ${input:modName} ${input:projName}",
+            "problemMatcher": []
+        },
+        {
+            "label": "New Test",
+            "type": "shell",
+            "command": "./scripts/new_module.sh test ${input:modName} ${input:projName}",
+            "problemMatcher": []
+        },
+        {
+            "label": "New Testbench",
+            "type": "shell",
+            "command": "./scripts/new_module.sh tb ${input:modName} ${input:projName}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build & Simulate",
+            "type": "shell",
+            "command": "make PROJ=${input:projName} all",
+            "problemMatcher": []
+        },
+        {
+            "label": "Waveform Viewer",
+            "type": "shell",
+            "command": "make PROJ=${input:projName} waves",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+# Force LF for shell scripts, templates, Makefiles and verilog sources
+*.sh text eol=lf
+scripts/*.sh text eol=lf
+*.tpl text eol=lf
+templates/* text eol=lf
+Makefile text eol=lf
+*.v text eol=lf
+
+# Binary files (keep default)
+*.png binary
+*.jpg binary

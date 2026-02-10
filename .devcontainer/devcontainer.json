@@ -1,0 +1,27 @@
+{
+  "name": "Verilog Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mshr-h.veriloghdl",
+        "chipsalliance.verible",
+        "ms-vscode.makefile-tools"
+      ],
+      "settings": {
+        "verilog.linting.enabled": true,
+        "verilog.linting.linter": "verilator",
+        "verible.formatting.enabled": true,
+        "verible.languageServer.enabled": true
+      }
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "chmod +x /workspace/scripts/*.sh",
+  "remoteUser": "vscode"
+}

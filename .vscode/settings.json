@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "verilog.linting.linter": "iverilog",
+    "verilog.languageServer.veribleVerilogLs.enabled": true,
+    "verilog.formatting.verilogHDL.formatter": "verible-verilog-format",
+    "verilog.ctags.path": "/usr/bin/ctags"
+}
