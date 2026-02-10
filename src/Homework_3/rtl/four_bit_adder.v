@@ -1,0 +1,27 @@
+`timescale 1ns/1ps // sets the time unit to 1ns and the time precision to 1ps
+
+module four_bit_adder(
+    input  [3:0] a,
+    input  [3:0] b,
+    input  cin,
+    output [3:0] sum,
+    output cout
+);
+
+    wire c1, c2, c3;
+
+    // Instantiate four 1-bit full adders
+    full_adder fa0 (
+        a[0], b[0], cin, sum[0], c1
+    );
+    full_adder fa1 (
+        a[1], b[1], c1, sum[1], c2
+    );
+    full_adder fa2 (
+        a[2], b[2], c2, sum[2], c3
+    );
+    full_adder fa3 (
+        a[3], b[3], c3, sum[3], cout
+    );
+
+endmodule
