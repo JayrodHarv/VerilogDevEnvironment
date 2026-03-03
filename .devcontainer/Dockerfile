@@ -25,6 +25,12 @@ RUN set -eux; \
     cp verible-*/bin/* /usr/local/bin/; \
     rm -rf verible*
 
+# install gtkwave and wayland
+RUN apt-get update && apt-get install -y \
+    gtkwave \
+    libgtk-3-0 \
+    libwayland-client0
+
 # ---- Create vscode user ----
 ARG USERNAME=vscode
 ARG USER_UID=1000

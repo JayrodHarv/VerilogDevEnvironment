@@ -3,6 +3,14 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "runArgs": [
+    "--env=WAYLAND_DISPLAY",
+    "--env=XDG_RUNTIME_DIR",
+    "--volume=${env:XDG_RUNTIME_DIR}:${env:XDG_RUNTIME_DIR}"
+  ],
+  "containerEnv": {
+    "GDK_BACKEND": "wayland"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
