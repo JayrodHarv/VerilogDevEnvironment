@@ -8,20 +8,20 @@ module sisc (clk, rst_f, ir);
   input clk, rst_f;
   input [31:0] ir;
 
-// declare all internal wires here
+  // declare all internal wires here
 
 
 
-// component instantiation goes here
+  // component instantiation goes here
 
 
 
   initial
-  
-// put a $monitor statement here.  
+  begin
 
+  end
+  
+  // put a $monitor statement here.
 
 
 endmodule
-
-
