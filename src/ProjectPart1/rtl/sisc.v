@@ -96,12 +96,6 @@ module sisc (
   );
 
   initial begin
-
-  end
-
-  // put a $monitor statement here.
-  always @(*) // This will print the values of the signals at every time step.
-  begin
     $monitor(
         "Time= %0d, IR= %h, R1= %h, R2= %h, R3= %h, R4= %h, R5= %h, ALU_OP= %h, WB_SEL= %b, RF_WE= %b, wb_data= %h",
         $time, ir, rsa, rsb, rf0.ram_array[1], rf0.ram_array[2], rf0.ram_array[3],
